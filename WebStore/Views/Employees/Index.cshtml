@@ -1,15 +1,13 @@
 ﻿@model IEnumerable<WebStore.Models.Employee>
 
-<!DOCTYPE html>
+@{
+    ViewData["Title"] = "Index";
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Сотрудники</title>
-</head>
-<body>
+<div class="container">
+
     <h3>Сотрудники</h3>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -22,18 +20,22 @@
         <tbody>
             @foreach (var employee in Model)
             {
-            <tr>
-                <td>@employee.Id</td>
-                <td>@employee.LastName</td>
-                <td>@employee.FirstName</td>
-                <td>@employee.Patronymic</td>
-                <td>@employee.Age</td>
-            </tr>
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.Patronymic</td>
+                    <td>@employee.Age</td>
+                </tr>
             }
         </tbody>
         <tr>
             <td></td>
         </tr>
     </table>
-</body>
-</html>
+
+    <p>
+        <a asp-controller="Home" asp-action="Index">Домой</a>
+    </p>
+
+</div>
